@@ -3,12 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avapor | Lavanderías en Rosario · Desde 2012</title>
-    <meta name="description" content="Lavandería en Rosario desde 2012. Lavados, planchado, tintorería, zapatillas, acolchados y servicio a domicilio. 3 sucursales: Jujuy, Mitre y San Juan.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Lavanderías Avapor | Confianza y buen trato para vos y tu ropa</title>
+    <meta name="description" content="Empresa creada y desarrollada en Rosario. Desde 2012 brindamos servicios de Lavandería a toda la ciudad. Lavados, planchado, tintorería y servicio a domicilio.">
     
     <style>
         :root {
@@ -38,7 +34,7 @@
         }
         
         body {
-            font-family: 'DM Sans', sans-serif;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             background: var(--cream);
             color: var(--ink);
             line-height: 1.6;
@@ -46,21 +42,12 @@
             -webkit-font-smoothing: antialiased;
         }
         
-        /* === TYPOGRAPHY === */
         h1, h2, h3, h4 {
-            font-family: 'Fraunces', serif;
-            font-weight: 500;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 700;
             letter-spacing: -0.02em;
-            line-height: 1.1;
+            line-height: 1.15;
             color: var(--violet-deep);
-        }
-        
-        /* === DECORATIVE WAVE === */
-        .wave-decoration {
-            position: absolute;
-            pointer-events: none;
-            opacity: 0.08;
-            z-index: 0;
         }
         
         /* === HEADER === */
@@ -197,11 +184,12 @@
             background: var(--white);
             border: 1px solid rgba(107, 77, 140, 0.15);
             border-radius: 100px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 500;
             color: var(--violet);
             margin-bottom: 28px;
             box-shadow: 0 4px 20px rgba(107, 77, 140, 0.04);
+            letter-spacing: 0.02em;
         }
         
         .hero-eyebrow .dot {
@@ -216,12 +204,12 @@
             font-size: clamp(2.5rem, 5.5vw, 4.5rem);
             margin-bottom: 28px;
             color: var(--violet-deep);
+            font-weight: 700;
+            letter-spacing: -0.03em;
         }
         
-        .hero h1 em {
-            font-style: italic;
-            color: var(--teal);
-            font-weight: 400;
+        .hero h1 .accent {
+            color: var(--teal-deep);
         }
         
         .hero h1 .underline {
@@ -242,18 +230,30 @@
         }
         
         .hero p.lead {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--ink-soft);
-            margin-bottom: 40px;
+            margin-bottom: 16px;
             max-width: 480px;
             line-height: 1.55;
+        }
+        
+        .hero-since {
+            display: inline-block;
+            font-size: 0.95rem;
+            color: var(--violet);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 36px;
+            padding: 6px 0;
+            border-top: 2px solid var(--teal);
+            border-bottom: 2px solid var(--teal);
+            padding: 8px 0;
         }
         
         .hero-actions {
             display: flex;
             gap: 16px;
             flex-wrap: wrap;
-            margin-bottom: 50px;
         }
         
         .btn {
@@ -293,33 +293,6 @@
             background: var(--violet);
             color: var(--white);
             transform: translateY(-2px);
-        }
-        
-        .hero-stats {
-            display: flex;
-            gap: 50px;
-        }
-        
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-        
-        .stat-number {
-            font-family: 'Fraunces', serif;
-            font-size: 2.5rem;
-            font-weight: 500;
-            color: var(--violet-deep);
-            line-height: 1;
-        }
-        
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--ink-mute);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-weight: 500;
         }
         
         /* Hero Image */
@@ -398,7 +371,7 @@
         }
         
         .badge-title {
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.95rem;
             color: var(--ink);
         }
@@ -429,10 +402,10 @@
         }
         
         .section-eyebrow {
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-size: 0.82rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.18em;
             color: var(--teal-deep);
             margin-bottom: 16px;
         }
@@ -443,9 +416,9 @@
         }
         
         .section-header p {
-            font-size: 1.1rem;
+            font-size: 1.08rem;
             color: var(--ink-soft);
-            line-height: 1.6;
+            line-height: 1.65;
         }
         
         .about-grid {
@@ -464,49 +437,7 @@
             font-size: 1.08rem;
             color: var(--ink-soft);
             margin-bottom: 18px;
-            line-height: 1.65;
-        }
-        
-        .about-pillars {
-            display: grid;
-            gap: 20px;
-            margin-top: 36px;
-        }
-        
-        .pillar {
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
-            padding: 20px;
-            background: var(--cream);
-            border-radius: 14px;
-            border-left: 3px solid var(--teal);
-        }
-        
-        .pillar-icon {
-            width: 38px;
-            height: 38px;
-            border-radius: 10px;
-            background: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-size: 18px;
-        }
-        
-        .pillar h4 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-            color: var(--ink);
-        }
-        
-        .pillar p {
-            font-size: 0.9rem;
-            color: var(--ink-soft);
-            margin: 0;
+            line-height: 1.7;
         }
         
         .about-visual {
@@ -537,21 +468,20 @@
         }
         
         .about-year .year-label {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.22em;
             color: var(--teal-deep);
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 8px;
         }
         
         .about-year .year-number {
-            font-family: 'Fraunces', serif;
             font-size: clamp(5rem, 12vw, 9rem);
-            font-weight: 500;
+            font-weight: 700;
             color: var(--violet-deep);
             line-height: 1;
-            font-style: italic;
+            letter-spacing: -0.04em;
         }
         
         .about-year .year-sub {
@@ -560,15 +490,15 @@
             margin-top: 8px;
         }
         
-        /* === SECTION: SERVICES === */
-        .services {
+        /* === SECTION: SERVICES (icon grid) === */
+        .services-icons {
             padding: 120px 32px;
             background: var(--cream);
             position: relative;
             overflow: hidden;
         }
         
-        .services::before {
+        .services-icons::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -579,23 +509,24 @@
             border-radius: 50%;
         }
         
-        .services-grid {
+        .services-icons-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 24px;
         }
         
-        .service-card {
+        .service-icon-card {
             background: var(--white);
             border-radius: 20px;
-            padding: 36px 30px;
+            padding: 36px 24px;
+            text-align: center;
             transition: all 0.4s ease;
             border: 1px solid transparent;
             position: relative;
             overflow: hidden;
         }
         
-        .service-card::before {
+        .service-icon-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -608,29 +539,29 @@
             transition: transform 0.4s ease;
         }
         
-        .service-card:hover {
+        .service-icon-card:hover {
             transform: translateY(-8px);
             border-color: rgba(107, 77, 140, 0.1);
             box-shadow: 0 30px 60px rgba(31, 58, 95, 0.08);
         }
         
-        .service-card:hover::before {
+        .service-icon-card:hover::before {
             transform: scaleX(1);
         }
         
         .service-icon-wrap {
-            width: 60px;
-            height: 60px;
+            width: 64px;
+            height: 64px;
             border-radius: 16px;
             background: linear-gradient(135deg, rgba(77, 189, 181, 0.12), rgba(107, 77, 140, 0.08));
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 24px;
+            margin: 0 auto 22px;
             transition: transform 0.3s ease;
         }
         
-        .service-card:hover .service-icon-wrap {
+        .service-icon-card:hover .service-icon-wrap {
             transform: rotate(-5deg) scale(1.05);
         }
         
@@ -640,90 +571,134 @@
             stroke: var(--violet);
         }
         
-        .service-card h3 {
-            font-family: 'Fraunces', serif;
-            font-size: 1.4rem;
-            margin-bottom: 12px;
+        .service-icon-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
             color: var(--violet-deep);
+            font-weight: 700;
         }
         
-        .service-card p {
+        .service-icon-card p {
             color: var(--ink-soft);
-            font-size: 0.97rem;
-            line-height: 1.6;
+            font-size: 0.92rem;
+            line-height: 1.55;
         }
         
-        .service-card .service-tag {
-            display: inline-block;
-            margin-top: 16px;
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: var(--teal-deep);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-        
-        /* === SECTION: HOW IT WORKS === */
-        .how {
+        /* === SECTION: SERVICES DETAILED === */
+        .services-detailed {
             padding: 120px 32px;
             background: var(--white);
         }
         
-        .how-grid {
+        .services-detailed-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            margin-top: 60px;
-            position: relative;
         }
         
-        .how-step {
-            text-align: center;
+        .service-detail-card {
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 40px 32px;
+            transition: all 0.4s ease;
             position: relative;
+            overflow: hidden;
+            border-left: 4px solid var(--teal);
         }
         
-        .how-number {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: var(--white);
-            border: 2px solid var(--violet);
+        .service-detail-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 60px rgba(31, 58, 95, 0.08);
+        }
+        
+        .service-detail-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--violet), var(--violet-deep));
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 22px;
-            font-family: 'Fraunces', serif;
-            font-size: 1.6rem;
-            font-weight: 500;
+            margin-bottom: 24px;
+        }
+        
+        .service-detail-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--white);
+        }
+        
+        .service-detail-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 14px;
             color: var(--violet-deep);
-            position: relative;
-            z-index: 2;
-            background: var(--cream);
-            transition: all 0.3s ease;
+            font-weight: 700;
         }
         
-        .how-step:hover .how-number {
-            background: var(--violet);
-            color: var(--white);
-            transform: scale(1.1);
-        }
-        
-        .how-step h4 {
-            font-family: 'Fraunces', serif;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--violet-deep);
-        }
-        
-        .how-step p {
+        .service-detail-card p {
             color: var(--ink-soft);
-            font-size: 0.95rem;
+            font-size: 0.98rem;
+            line-height: 1.65;
+        }
+        
+        /* === SECTION: MISSION/VISION === */
+        .mission-vision {
+            padding: 120px 32px;
+            background: var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .mv-card {
+            background: var(--white);
+            padding: 50px 44px;
+            border-radius: 24px;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(31, 58, 95, 0.04);
+        }
+        
+        .mv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--teal);
+            border-radius: 0 0 4px 4px;
+        }
+        
+        .mv-label {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--teal-deep);
+            margin-bottom: 16px;
+        }
+        
+        .mv-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--violet-deep);
+        }
+        
+        .mv-card p {
+            color: var(--ink-soft);
+            font-size: 1.05rem;
+            line-height: 1.75;
         }
         
         /* === SECTION: LOCATIONS === */
         .locations {
             padding: 120px 32px;
-            background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+            background: linear-gradient(180deg, var(--cream-dark) 0%, var(--cream) 100%);
             position: relative;
         }
         
@@ -766,43 +741,26 @@
         }
         
         .location-card h3 {
-            font-family: 'Fraunces', serif;
             font-size: 1.5rem;
             margin-bottom: 6px;
             color: var(--violet-deep);
+            font-weight: 700;
         }
         
         .location-area {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--ink-mute);
-            margin-bottom: 24px;
+            margin-bottom: 22px;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
             font-weight: 500;
         }
         
-        .location-info {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 26px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(107, 77, 140, 0.1);
-        }
-        
-        .location-info-row {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.92rem;
-            color: var(--ink-soft);
-        }
-        
-        .location-info-row svg {
-            width: 18px;
-            height: 18px;
-            stroke: var(--teal-deep);
-            flex-shrink: 0;
+        .location-help {
+            font-size: 0.88rem;
+            color: var(--ink-mute);
+            margin-bottom: 14px;
+            font-style: italic;
         }
         
         .location-cta {
@@ -816,8 +774,8 @@
             padding: 14px 24px;
             border-radius: 100px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
+            font-weight: 700;
+            font-size: 0.98rem;
             transition: all 0.3s ease;
         }
         
@@ -832,7 +790,45 @@
             height: 18px;
         }
         
-        /* === SECTION: CTA === */
+        /* === PAYMENT METHODS === */
+        .payments {
+            padding: 100px 32px;
+            background: var(--white);
+            text-align: center;
+        }
+        
+        .payments h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+            margin-bottom: 50px;
+        }
+        
+        .payments-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .payment-pill {
+            background: var(--cream);
+            padding: 14px 24px;
+            border-radius: 100px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--violet-deep);
+            border: 1px solid rgba(107, 77, 140, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .payment-pill:hover {
+            background: var(--violet);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        /* === SECTION: FRANCHISE CTA === */
         .cta-section {
             padding: 120px 32px;
             position: relative;
@@ -863,17 +859,17 @@
         
         .cta-section h2 {
             color: var(--white);
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
             margin-bottom: 24px;
+            font-weight: 700;
         }
         
-        .cta-section h2 em {
+        .cta-section h2 .accent {
             color: var(--teal-light);
-            font-style: italic;
         }
         
         .cta-section p {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             opacity: 0.85;
             margin-bottom: 40px;
             color: rgba(255, 255, 255, 0.85);
@@ -924,11 +920,10 @@
         }
         
         .footer-section h4 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-size: 0.82rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.14em;
             color: var(--teal-light);
             margin-bottom: 20px;
         }
@@ -1049,19 +1044,19 @@
         /* === RESPONSIVE === */
         @media (max-width: 1024px) {
             .hero-grid,
-            .about-grid {
+            .about-grid,
+            .mv-grid {
                 grid-template-columns: 1fr;
                 gap: 60px;
             }
             
-            .services-grid,
-            .locations-grid {
+            .services-icons-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             
-            .how-grid {
+            .services-detailed-grid,
+            .locations-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
             }
             
             .footer-grid {
@@ -1087,14 +1082,6 @@
                 padding: 120px 20px 60px;
             }
             
-            .hero-stats {
-                gap: 30px;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
-            }
-            
             .hero-badge.top {
                 right: 0;
                 top: 15px;
@@ -1114,17 +1101,23 @@
             }
             
             .about,
-            .services,
-            .how,
+            .services-icons,
+            .services-detailed,
+            .mission-vision,
             .locations,
+            .payments,
             .cta-section {
                 padding: 80px 20px;
             }
             
-            .services-grid,
-            .locations-grid,
-            .how-grid {
+            .services-icons-grid,
+            .services-detailed-grid,
+            .locations-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .mv-card {
+                padding: 36px 28px;
             }
             
             .footer-grid {
@@ -1153,16 +1146,16 @@
 <header>
     <div class="header-inner">
         <a href="#" class="logo-wrap">
-            <img src="img/logo-completo.png" alt="Avapor Lavanderías">
+            <img src="img/logo-completo.png" alt="Lavanderías Avapor">
         </a>
         <nav>
             <ul>
-                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#quienes">Quienes somos</a></li>
                 <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#sucursales">Sucursales</a></li>
-                <li><a href="#franquicia">Franquicias</a></li>
-                <li><a href="https://api.whatsapp.com/send?phone=543416881427" class="header-cta">
-                    Pedí turno
+                <li><a href="#donde">Donde estamos</a></li>
+                <li><a href="#franquicia">Franquicia</a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=543416881427&text=Quisiera%20hacer%20una%20consulta" class="header-cta">
+                    Consultas
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </a></li>
             </ul>
@@ -1179,40 +1172,23 @@
         <div class="hero-text">
             <div class="hero-eyebrow">
                 <span class="dot"></span>
-                #estiloenlavanderías · Rosario
+                #estiloenlavanderias
             </div>
             <h1>
-                Confianza y <em>buen trato</em><br>
-                para vos y <span class="underline">tu ropa</span>.
+                Confianza y <span class="accent">buen trato</span> para vos y <span class="underline">tu ropa</span>
             </h1>
-            <p class="lead">
-                Una empresa rosarina que desde 2012 cuida tu ropa con el mismo respeto que vos. Lavados, planchado, tintorería y servicio a domicilio.
-            </p>
+            <span class="hero-since">DESDE 2012</span>
             <div class="hero-actions">
-                <a href="https://api.whatsapp.com/send?phone=543416881427&text=Hola!%20Quiero%20hacer%20una%20consulta" class="btn btn-primary">
+                <a href="https://api.whatsapp.com/send?phone=543416881427&text=Quisiera%20hacer%20una%20consulta" class="btn btn-primary">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/>
                     </svg>
-                    Pedí tu turno
+                    Consultas por WhatsApp
                 </a>
                 <a href="#servicios" class="btn btn-secondary">
                     Ver servicios
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
                 </a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number">12+</span>
-                    <span class="stat-label">Años de trabajo</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">3</span>
-                    <span class="stat-label">Sucursales</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">∞</span>
-                    <span class="stat-label">Prendas cuidadas</span>
-                </div>
             </div>
         </div>
         <div class="hero-visual">
@@ -1238,41 +1214,18 @@
 </section>
 
 <!-- ABOUT -->
-<section class="about" id="nosotros">
+<section class="about" id="quienes">
     <div class="container">
         <div class="about-grid">
             <div class="about-text reveal">
-                <div class="section-eyebrow">Quiénes somos</div>
-                <h2>Una historia rosarina que empezó en 2012.</h2>
+                <div class="section-eyebrow">Quienes Somos</div>
+                <h2>Una empresa rosarina, hecha con dedicación.</h2>
                 <p>
-                    Somos una empresa creada y desarrollada en Rosario. Brindamos servicios de lavandería a toda la ciudad con una amplia gama que incluye lavados especiales y artesanales, planchado y tintorería.
+                    Somos una empresa creada y desarrollada en Rosario. Desde 2012 brindamos servicios de Lavandería a toda la ciudad.
                 </p>
                 <p>
-                    Sabemos lo importante que es tu ropa, por eso te ofrecemos un servicio personalizado para darte el cuidado y respeto que se merece.
+                    Actualmente, Avapor brinda una amplia gama de servicios que incluyen lavados especiales y artesanales, planchado y tintorería.
                 </p>
-                <div class="about-pillars">
-                    <div class="pillar">
-                        <div class="pillar-icon">🤝</div>
-                        <div>
-                            <h4>Trato personalizado</h4>
-                            <p>Atendemos a cada cliente como si fuera el único.</p>
-                        </div>
-                    </div>
-                    <div class="pillar">
-                        <div class="pillar-icon">✨</div>
-                        <div>
-                            <h4>Confianza y buena atención</h4>
-                            <p>Más de una década cuidando la ropa de los rosarinos.</p>
-                        </div>
-                    </div>
-                    <div class="pillar">
-                        <div class="pillar-icon">📈</div>
-                        <div>
-                            <h4>Crecimiento profesional</h4>
-                            <p>Nos capacitamos constantemente para brindarte lo mejor.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="about-visual reveal">
                 <div class="about-shape"></div>
@@ -1286,27 +1239,15 @@
     </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="servicios">
+<!-- SERVICES (icon grid) -->
+<section class="services-icons" id="servicios">
     <div class="container">
         <div class="section-header reveal">
             <div class="section-eyebrow">Nuestros servicios</div>
-            <h2>Todo lo que tu ropa necesita, en un solo lugar.</h2>
-            <p>Un servicio personalizado para cada tipo de prenda. Desde lavados estándar hasta cuidados artesanales especializados.</p>
+            <h2>Te presentamos nuestros servicios personalizados</h2>
         </div>
-        <div class="services-grid">
-            <div class="service-card reveal">
-                <div class="service-icon-wrap">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M3 7h18M5 7v13a1 1 0 001 1h12a1 1 0 001-1V7M9 4h6v3H9z"/>
-                        <circle cx="12" cy="14" r="4"/>
-                    </svg>
-                </div>
-                <h3>Lavados</h3>
-                <p>Desmanchado, lavado, secado, perfumado, doblado y embolsado. Un lavado incluye entre 10 y 12 prendas estándar.</p>
-                <span class="service-tag">Servicio principal</span>
-            </div>
-            <div class="service-card reveal">
+        <div class="services-icons-grid">
+            <div class="service-icon-card reveal">
                 <div class="service-icon-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4 19l4-4 4 4-4 4-4-4z"/>
@@ -1314,23 +1255,30 @@
                         <path d="M9 14l5-5"/>
                     </svg>
                 </div>
-                <h3>Lavados artesanales</h3>
-                <p>Para zapatillas, mochilas, bolsos o cualquier prenda especial. Sin máquinas, todo a mano con el máximo cuidado.</p>
-                <span class="service-tag">Hecho a mano</span>
+                <h3>Zapatillas y mochilas</h3>
+                <p>Lavado y secado artesanal</p>
             </div>
-            <div class="service-card reveal">
+            <div class="service-icon-card reveal">
                 <div class="service-icon-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="3" y="6" width="18" height="14" rx="2"/>
                         <path d="M7 10h10M7 14h6"/>
-                        <path d="M12 2v4"/>
                     </svg>
                 </div>
-                <h3>Lavados especiales</h3>
-                <p>Acolchados, plumones, frazadas, pelletes, cubrecamas, edredones, almohadas y alfombras.</p>
-                <span class="service-tag">Limpieza profunda</span>
+                <h3>Acolchados</h3>
+                <p>Limpieza profunda de acolchados, frazadas y plumones</p>
             </div>
-            <div class="service-card reveal">
+            <div class="service-icon-card reveal">
+                <div class="service-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 4l4 4-9 9-4 1 1-4 9-9z"/>
+                        <path d="M14 6l4 4"/>
+                    </svg>
+                </div>
+                <h3>Tintorería</h3>
+                <p>Limpieza en seco para prendas delicadas</p>
+            </div>
+            <div class="service-icon-card reveal">
                 <div class="service-icon-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M3 12h12a3 3 0 003-3V5a2 2 0 00-2-2H8a2 2 0 00-2 2v7"/>
@@ -1339,21 +1287,29 @@
                     </svg>
                 </div>
                 <h3>Planchado</h3>
-                <p>Planchamos todo tipo de prendas. Camisas, pantalones, sábanas, manteles. Acabado profesional.</p>
-                <span class="service-tag">Acabado prolijo</span>
+                <p>Prendas en general</p>
             </div>
-            <div class="service-card reveal">
+            <div class="service-icon-card reveal">
                 <div class="service-icon-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 4l4 4-9 9-4 1 1-4 9-9z"/>
-                        <path d="M14 6l4 4"/>
+                        <path d="M3 7h18M5 7v13a1 1 0 001 1h12a1 1 0 001-1V7M9 4h6v3H9z"/>
+                        <circle cx="12" cy="14" r="4"/>
                     </svg>
                 </div>
-                <h3>Tintorería</h3>
-                <p>Limpieza en seco para prendas delicadas. Trajes, vestidos, abrigos. Cuidado experto.</p>
-                <span class="service-tag">En seco</span>
+                <h3>Ropa</h3>
+                <p>Lavado de prendas de todo tipo</p>
             </div>
-            <div class="service-card reveal">
+            <div class="service-icon-card reveal">
+                <div class="service-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="6" width="20" height="12" rx="2"/>
+                        <path d="M2 10h20M6 14h2M11 14h2"/>
+                    </svg>
+                </div>
+                <h3>Medios de pago</h3>
+                <p>Aceptamos diversos métodos de pago</p>
+            </div>
+            <div class="service-icon-card reveal">
                 <div class="service-icon-wrap">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="7" cy="17" r="3"/>
@@ -1362,53 +1318,142 @@
                     </svg>
                 </div>
                 <h3>Servicio a domicilio</h3>
-                <p>Puerta a puerta. Retiramos y entregamos sin que tengas que moverte de tu casa o trabajo.</p>
-                <span class="service-tag">Retiro y entrega</span>
+                <p>Puerta a puerta</p>
+            </div>
+            <div class="service-icon-card reveal">
+                <div class="service-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2l2 4 4 1-3 3 1 4-4-2-4 2 1-4-3-3 4-1z"/>
+                    </svg>
+                </div>
+                <h3>Estilo en lavanderías</h3>
+                <p>#estiloenlavanderias</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="how">
+<!-- SERVICES DETAILED -->
+<section class="services-detailed">
     <div class="container">
         <div class="section-header reveal">
-            <div class="section-eyebrow">Cómo trabajamos</div>
-            <h2>Tu ropa, en cuatro pasos.</h2>
-            <p>Un proceso simple y transparente, para que sepas exactamente qué hacemos con tus prendas.</p>
+            <div class="section-eyebrow">Detalle de servicios</div>
+            <h2>Estilo en lavanderías</h2>
         </div>
-        <div class="how-grid">
-            <div class="how-step reveal">
-                <div class="how-number">1</div>
-                <h4>Nos contactás</h4>
-                <p>Por WhatsApp o pasás por una de nuestras sucursales.</p>
+        <div class="services-detailed-grid">
+            <div class="service-detail-card reveal">
+                <div class="service-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 7h18M5 7v13a1 1 0 001 1h12a1 1 0 001-1V7M9 4h6v3H9z"/>
+                        <circle cx="12" cy="14" r="4"/>
+                    </svg>
+                </div>
+                <h3>Lavados</h3>
+                <p>Nuestro servicio de lavado incluye desmanchado de prendas, lavado, secado, perfumado, doblado y embolsado. Un lavado incluye entre 10 y 12 prendas estándar.</p>
             </div>
-            <div class="how-step reveal">
-                <div class="how-number">2</div>
-                <h4>Recibimos tu ropa</h4>
-                <p>La revisamos prenda por prenda y elegimos el mejor cuidado.</p>
+            <div class="service-detail-card reveal">
+                <div class="service-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19l4-4 4 4-4 4-4-4z"/>
+                        <path d="M14 9l4-4 4 4-4 4-4-4z"/>
+                        <path d="M9 14l5-5"/>
+                    </svg>
+                </div>
+                <h3>Lavados artesanales</h3>
+                <p>Este tipo de lavados, es para zapatillas, mochilas, bolsos, o cualquier prenda que su etiqueta así lo indique. No se utilizan maquinas.</p>
             </div>
-            <div class="how-step reveal">
-                <div class="how-number">3</div>
-                <h4>Trabajamos con esmero</h4>
-                <p>Lavado, planchado o tintorería según corresponda.</p>
+            <div class="service-detail-card reveal">
+                <div class="service-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="6" width="18" height="14" rx="2"/>
+                        <path d="M7 10h10M7 14h6"/>
+                        <path d="M12 2v4"/>
+                    </svg>
+                </div>
+                <h3>Lavados especiales</h3>
+                <p>Incluye lavados de acolchados, plumones, frazadas, pellettes, cubrecamas, edredones, almohadas, alfombras.</p>
             </div>
-            <div class="how-step reveal">
-                <div class="how-number">4</div>
-                <h4>La entregamos</h4>
-                <p>Lista para usar. Doblada, embolsada y perfumada.</p>
+            <div class="service-detail-card reveal">
+                <div class="service-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 12h12a3 3 0 003-3V5a2 2 0 00-2-2H8a2 2 0 00-2 2v7"/>
+                        <path d="M3 12v6a2 2 0 002 2h11a2 2 0 002-2v-2"/>
+                        <circle cx="9" cy="16" r="1.5"/>
+                    </svg>
+                </div>
+                <h3>Planchado</h3>
+                <p>Planchamos todo tipo de prendas.</p>
+            </div>
+            <div class="service-detail-card reveal">
+                <div class="service-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 4l4 4-9 9-4 1 1-4 9-9z"/>
+                        <path d="M14 6l4 4"/>
+                    </svg>
+                </div>
+                <h3>Tintorería</h3>
+                <p>Limpieza en seco para prendas delicadas.</p>
+            </div>
+            <div class="service-detail-card reveal">
+                <div class="service-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="7" cy="17" r="3"/>
+                        <circle cx="17" cy="17" r="3"/>
+                        <path d="M10 17h4M14 17V7h4l3 3v7M3 7h7v10"/>
+                    </svg>
+                </div>
+                <h3>Servicio a domicilio</h3>
+                <p>Puerta a puerta.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="mission-vision">
+    <div class="container">
+        <div class="section-header reveal">
+            <div class="section-eyebrow">Nuestra misión y visión</div>
+            <h2>Lo que nos mueve cada día</h2>
+        </div>
+        <div class="mv-grid">
+            <div class="mv-card reveal">
+                <div class="mv-label">Misión</div>
+                <h3>Cuidamos lo que es importante para vos.</h3>
+                <p>Sabemos lo importante que es tu ropa, por eso te ofrecemos un servicio personalizado para darte el cuidado y respeto que se merece.</p>
+            </div>
+            <div class="mv-card reveal">
+                <div class="mv-label">Visión</div>
+                <h3>Crecer cada día para servirte mejor.</h3>
+                <p>Nuestros pilares en Avapor son: El trato personalizado a nuestros clientes, la confianza y la buena atención. Nos interesa mucho nuestro crecimiento personal y profesional para brindarte el mejor servicio.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PAYMENTS -->
+<section class="payments">
+    <div class="container">
+        <div class="reveal">
+            <div class="section-eyebrow">Métodos de pago</div>
+            <h2>Aceptamos diversos métodos de pago</h2>
+            <div class="payments-list">
+                <div class="payment-pill">Efectivo</div>
+                <div class="payment-pill">Mercado Pago</div>
+                <div class="payment-pill">Tarjeta de débito</div>
+                <div class="payment-pill">Tarjeta de crédito</div>
+                <div class="payment-pill">Transferencia</div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- LOCATIONS -->
-<section class="locations" id="sucursales">
+<section class="locations" id="donde">
     <div class="container">
         <div class="section-header reveal">
-            <div class="section-eyebrow">Dónde estamos</div>
-            <h2>Tres sucursales en Rosario, una más cerca tuyo.</h2>
-            <p>Encontranos en cualquiera de nuestros locales o pedí servicio a domicilio.</p>
+            <div class="section-eyebrow">Dónde nos encontrás</div>
+            <h2>Encontrá una de nuestras Sucursales cerca tuyo siempre</h2>
         </div>
         <div class="locations-grid">
             <div class="location-card reveal">
@@ -1419,27 +1464,13 @@
                     </svg>
                 </div>
                 <h3>Jujuy 1684</h3>
-                <div class="location-area">Centro · Rosario</div>
-                <div class="location-info">
-                    <div class="location-info-row">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
-                        </svg>
-                        <span>Lun a Vie 10-19hs · Sáb 10-13hs</span>
-                    </div>
-                    <div class="location-info-row">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-                        </svg>
-                        <span>341 688-1427</span>
-                    </div>
-                </div>
-                <a href="https://api.whatsapp.com/send?phone=543416881427&text=Hola!%20Quiero%20hacer%20una%20consulta" class="location-cta">
+                <div class="location-area">Rosario</div>
+                <div class="location-help">Toque el numero para abrir en whatsapp</div>
+                <a href="https://api.whatsapp.com/send?phone=543416881427" class="location-cta">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/>
                     </svg>
-                    Consultar por WhatsApp
+                    3416881427
                 </a>
             </div>
             <div class="location-card reveal">
@@ -1450,27 +1481,13 @@
                     </svg>
                 </div>
                 <h3>Mitre 1484</h3>
-                <div class="location-area">Centro · Rosario</div>
-                <div class="location-info">
-                    <div class="location-info-row">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
-                        </svg>
-                        <span>Lun a Vie 10-19hs · Sáb 10-13hs</span>
-                    </div>
-                    <div class="location-info-row">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-                        </svg>
-                        <span>341 318-7551</span>
-                    </div>
-                </div>
-                <a href="https://api.whatsapp.com/send?phone=543413187551&text=Hola!%20Quiero%20hacer%20una%20consulta" class="location-cta">
+                <div class="location-area">Rosario</div>
+                <div class="location-help">Toque el numero para abrir en whatsapp</div>
+                <a href="https://api.whatsapp.com/send?phone=543413187551" class="location-cta">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/>
                     </svg>
-                    Consultar por WhatsApp
+                    3413187551
                 </a>
             </div>
             <div class="location-card reveal">
@@ -1481,43 +1498,29 @@
                     </svg>
                 </div>
                 <h3>San Juan 1446</h3>
-                <div class="location-area">Centro · Rosario</div>
-                <div class="location-info">
-                    <div class="location-info-row">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
-                        </svg>
-                        <span>Lun a Vie 10-19hs · Sáb 10-13hs</span>
-                    </div>
-                    <div class="location-info-row">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-                        </svg>
-                        <span>341 239-5132</span>
-                    </div>
-                </div>
-                <a href="https://api.whatsapp.com/send?phone=543412395132&text=Hola!%20Quiero%20hacer%20una%20consulta" class="location-cta">
+                <div class="location-area">Rosario</div>
+                <div class="location-help">Toque el numero para abrir en whatsapp</div>
+                <a href="https://api.whatsapp.com/send?phone=543412395132" class="location-cta">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/>
                     </svg>
-                    Consultar por WhatsApp
+                    3412395132
                 </a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CTA -->
+<!-- CTA - FRANQUICIA -->
 <section class="cta-section" id="franquicia">
     <div class="cta-content">
-        <div class="section-eyebrow" style="color: var(--teal-light);">Franquicias</div>
-        <h2>¿Querés tener tu propia <em>Avapor</em>?</h2>
+        <div class="section-eyebrow" style="color: var(--teal-light);">Contacto</div>
+        <h2>Quiero una <span class="accent">franquicia</span></h2>
         <p>
-            Con más de 12 años de experiencia y un sistema probado, sumate a la familia Avapor y abrí tu propia sucursal en tu ciudad. Te acompañamos en todo el proceso.
+            Sumate a la familia Avapor. Escribinos y te contamos cómo abrir tu propia sucursal.
         </p>
-        <a href="https://api.whatsapp.com/send?phone=543416881427&text=Hola!%20Estoy%20interesado%20en%20la%20franquicia%20de%20Avapor" class="btn btn-primary">
-            Consultar por una franquicia
+        <a href="https://api.whatsapp.com/send?phone=543416881427&text=Hola!%20Estoy%20interesado%20en%20una%20franquicia%20de%20Avapor" class="btn btn-primary">
+            Consultar
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
     </div>
@@ -1527,8 +1530,8 @@
 <footer>
     <div class="footer-grid">
         <div class="footer-brand">
-            <img src="img/logo-completo.png" alt="Avapor">
-            <p>Lavandería en Rosario desde 2012. Cuidamos tu ropa con el mismo respeto que vos.</p>
+            <img src="img/logo-completo.png" alt="Lavanderías Avapor">
+            <p>Empresa creada y desarrollada en Rosario. Desde 2012 brindamos servicios de Lavandería a toda la ciudad.</p>
             <div class="footer-socials">
                 <a href="https://www.instagram.com/avaporlavanderias/" target="_blank" aria-label="Instagram">
                     <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -1542,20 +1545,20 @@
             </div>
         </div>
         <div class="footer-section">
-            <h4>Servicios</h4>
+            <h4>Navegación</h4>
             <ul>
-                <li><a href="#servicios">Lavados</a></li>
-                <li><a href="#servicios">Planchado</a></li>
-                <li><a href="#servicios">Tintorería</a></li>
-                <li><a href="#servicios">A domicilio</a></li>
+                <li><a href="#quienes">Quienes somos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#donde">Dónde estamos</a></li>
+                <li><a href="#franquicia">Franquicia</a></li>
             </ul>
         </div>
         <div class="footer-section">
             <h4>Sucursales</h4>
             <ul>
-                <li><a href="#sucursales">Jujuy 1684</a></li>
-                <li><a href="#sucursales">Mitre 1484</a></li>
-                <li><a href="#sucursales">San Juan 1446</a></li>
+                <li><a href="#donde">Jujuy 1684</a></li>
+                <li><a href="#donde">Mitre 1484</a></li>
+                <li><a href="#donde">San Juan 1446</a></li>
             </ul>
         </div>
         <div class="footer-section">
@@ -1568,36 +1571,29 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <span>© 2025 Lavanderías Avapor · Todos los derechos reservados</span>
-        <span>#estiloenlavanderías · Rosario, Argentina</span>
+        <span>Lavanderias Avapor © - Todos los derechos reservados</span>
+        <span>#estiloenlavanderias · Rosario, Argentina</span>
     </div>
 </footer>
 
 <!-- WHATSAPP FLOAT -->
-<a href="https://api.whatsapp.com/send?phone=543416881427&text=Hola!%20Quiero%20hacer%20una%20consulta" class="whatsapp-float" target="_blank" aria-label="Consultar por WhatsApp">
+<a href="https://api.whatsapp.com/send?phone=543416881427&text=Quisiera%20hacer%20una%20consulta" class="whatsapp-float" target="_blank" aria-label="Consultar por WhatsApp">
     <svg viewBox="0 0 24 24">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
 </a>
 
 <script>
-    // Scroll reveal
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     
-    // Header scroll effect
     let lastScroll = 0;
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
