@@ -1080,8 +1080,41 @@
                 display: none;
             }
             
+            nav.is-open ul {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: var(--cream);
+                padding: 20px 24px;
+                gap: 20px;
+                border-top: 1px solid rgba(107, 77, 140, 0.08);
+                box-shadow: 0 10px 30px rgba(31, 58, 95, 0.08);
+                align-items: flex-start;
+            }
+            
+            nav.is-open .header-cta {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            nav {
+                position: static;
+            }
+            
+            header {
+                position: fixed;
+            }
+            
             .menu-toggle {
                 display: flex;
+            }
+            
+            .menu-toggle.is-active svg {
+                transform: rotate(90deg);
+                transition: transform 0.3s ease;
             }
             
             .hero {
@@ -1611,6 +1644,25 @@
         }
         lastScroll = currentScroll;
     });
+    
+    // Toggle menú mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('header nav');
+    
+    if (menuToggle && nav) {
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('is-open');
+            menuToggle.classList.toggle('is-active');
+        });
+        
+        // Cerrar el menú al hacer click en un link
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('is-open');
+                menuToggle.classList.remove('is-active');
+            });
+        });
+    }
 </script>
 
 </body>
