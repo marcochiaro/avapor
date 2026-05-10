@@ -1694,5 +1694,70 @@
 </script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
 
+<!-- Tracking custom de eventos de conversion -->
+<script>
+(function() {
+    function track(eventName, data) {
+        if (typeof window.va === 'function') {
+            window.va('event', { name: eventName, data: data || {} });
+        }
+    }
+
+    // Trackear clicks en links de WhatsApp
+    document.querySelectorAll('a[href*="whatsapp.com"], a[href*="wa.me"]').forEach(function(link) {
+        link.addEventListener('click', function() {
+            var location = link.classList.contains('header-cta') ? 'header'
+                : link.classList.contains('whatsapp-float') ? 'floating'
+                : link.classList.contains('btn-primary') ? 'hero'
+                : link.classList.contains('location-cta') ? 'sucursales'
+                : 'otro';
+            track('click_whatsapp', { ubicacion: location });
+        });
+    });
+
+    // Trackear clicks en links de telefono
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+        link.addEventListener('click', function() {
+            track('click_telefono', { numero: link.href.replace('tel:', '') });
+        });
+    });
+
+    // Trackear clicks en email
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
+        link.addEventListener('click', function() {
+            track('click_email');
+        });
+    });
+
+    // Trackear clicks en redes sociales
+    document.querySelectorAll('a[href*="instagram.com"]').forEach(function(link) {
+        link.addEventListener('click', function() { track('click_instagram'); });
+    });
+    document.querySelectorAll('a[href*="facebook.com"]').forEach(function(link) {
+        link.addEventListener('click', function() { track('click_facebook'); });
+    });
+
+    // Trackear clicks en links de Google Maps (sucursales)
+    document.querySelectorAll('a[href*="google.com/maps"], a[href*="maps.app.goo.gl"]').forEach(function(link) {
+        link.addEventListener('click', function() { track('click_mapa_sucursal'); });
+    });
+
+    // Trackear scroll profundo (visitante leyo toda la pagina)
+    var scrollTracked = { 50: false, 75: false, 90: false };
+    window.addEventListener('scroll', function() {
+        var scrollPct = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
+        [50, 75, 90].forEach(function(threshold) {
+            if (scrollPct >= threshold && !scrollTracked[threshold]) {
+                scrollTracked[threshold] = true;
+                track('scroll_' + threshold + 'pct');
+            }
+        });
+    }, { passive: true });
+
+    // Trackear permanencia mayor a 30 segundos
+    setTimeout(function() { track('engaged_30s'); }, 30000);
+})();
+</script>
+
 </body>
 </html>
