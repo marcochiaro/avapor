@@ -810,6 +810,272 @@
             height: 18px;
         }
         
+        .location-map {
+            margin-top: 18px;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 180px;
+            border: 1px solid rgba(107, 77, 140, 0.08);
+        }
+        
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+        
+        /* === REVIEWS === */
+        .reviews {
+            padding: 120px 32px;
+            background: var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .reviews::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -120px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(107, 77, 140, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .reviews .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .reviews-google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--white);
+            padding: 10px 20px;
+            border-radius: 100px;
+            margin-bottom: 22px;
+            box-shadow: 0 4px 18px rgba(107, 77, 140, 0.06);
+            font-size: 0.9rem;
+            color: var(--ink-soft);
+            font-weight: 500;
+        }
+        
+        .reviews-google-badge .stars {
+            color: #FBBC04;
+            letter-spacing: 1px;
+            font-size: 1rem;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 56px;
+        }
+        
+        .review-card {
+            background: var(--white);
+            border-radius: 18px;
+            padding: 28px 26px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(107, 77, 140, 0.06);
+        }
+        
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(31, 58, 95, 0.08);
+        }
+        
+        .review-stars {
+            color: #FBBC04;
+            letter-spacing: 3px;
+            font-size: 1rem;
+            margin-bottom: 14px;
+        }
+        
+        .review-text {
+            color: var(--ink);
+            font-size: 0.96rem;
+            line-height: 1.65;
+            margin-bottom: 20px;
+        }
+        
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(107, 77, 140, 0.08);
+        }
+        
+        .review-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--violet), var(--violet-deep));
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        .review-name {
+            font-weight: 600;
+            font-size: 0.92rem;
+            color: var(--violet-deep);
+        }
+        
+        .review-source {
+            font-size: 0.78rem;
+            color: var(--ink-mute);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .review-source-icon {
+            width: 12px;
+            height: 12px;
+        }
+        
+        /* === SUGGESTIONS FORM === */
+        .suggestions {
+            padding: 120px 32px;
+            background: var(--white);
+        }
+        
+        .suggestions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 70px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .suggestions-form {
+            background: var(--cream);
+            padding: 44px 38px;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            border: 1px solid rgba(107, 77, 140, 0.06);
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .form-group label {
+            font-size: 0.86rem;
+            font-weight: 600;
+            color: var(--violet-deep);
+            letter-spacing: 0.02em;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            background: var(--white);
+            border: 1.5px solid rgba(107, 77, 140, 0.12);
+            border-radius: 10px;
+            padding: 13px 16px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            color: var(--ink);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            width: 100%;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--violet);
+            box-shadow: 0 0 0 4px rgba(107, 77, 140, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 110px;
+            font-family: inherit;
+        }
+        
+        .form-submit {
+            background: var(--violet-deep);
+            color: var(--white);
+            border: none;
+            padding: 16px 26px;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 1rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .form-submit:hover:not(:disabled) {
+            background: var(--violet);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(107, 77, 140, 0.3);
+        }
+        
+        .form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .form-status {
+            margin-top: 6px;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            text-align: center;
+            display: none;
+        }
+        
+        .form-status.success {
+            display: block;
+            background: rgba(77, 189, 181, 0.15);
+            color: var(--teal-deep);
+            border: 1px solid rgba(77, 189, 181, 0.3);
+        }
+        
+        .form-status.error {
+            display: block;
+            background: rgba(220, 80, 80, 0.1);
+            color: #B83333;
+            border: 1px solid rgba(220, 80, 80, 0.25);
+        }
+        
+        @media (max-width: 900px) {
+            .suggestions-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .suggestions-form {
+                padding: 32px 24px;
+            }
+        }
+        
         /* === PAYMENT METHODS === */
         .payments {
             padding: 100px 32px;
@@ -1493,6 +1759,85 @@
     </div>
 </section>
 
+<!-- REVIEWS -->
+<section class="reviews" id="opiniones">
+    <div class="container">
+        <div class="section-header reveal">
+            <div class="reviews-google-badge">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+                <span class="stars">★★★★★</span>
+                <span>Reseñas verificadas en Google</span>
+            </div>
+            <div class="section-eyebrow">Nuestros clientes</div>
+            <h2>Lo que dicen <span class="accent">los clientes</span></h2>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card reveal">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"El servicio es excelente y el precio muy razonable. La calidad del servicio es destacada. Estoy muy agradecida de ser cliente de Avapor."</p>
+                <div class="review-author">
+                    <div class="review-avatar">M</div>
+                    <div>
+                        <div class="review-name">Cliente verificada</div>
+                        <div class="review-source">
+                            <svg class="review-source-icon" viewBox="0 0 24 24">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                            Reseña en Google
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card reveal">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"El personal es excelente con los clientes: atentos y amables. Son puntuales y todo está siempre impecable. ¡Recomiendo este lugar totalmente!"</p>
+                <div class="review-author">
+                    <div class="review-avatar">L</div>
+                    <div>
+                        <div class="review-name">Cliente verificada</div>
+                        <div class="review-source">
+                            <svg class="review-source-icon" viewBox="0 0 24 24">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                            Reseña en Google
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card reveal">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Impecable. Me entregaron la ropa el mismo día, las chicas fueron excelentes. Súper recomendable, atentas y dispuestas a tus necesidades."</p>
+                <div class="review-author">
+                    <div class="review-avatar">A</div>
+                    <div>
+                        <div class="review-name">Cliente verificada</div>
+                        <div class="review-source">
+                            <svg class="review-source-icon" viewBox="0 0 24 24">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                            Reseña en Google
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- PAYMENTS -->
 <section class="payments">
     <div class="container">
@@ -1534,6 +1879,9 @@
                     </svg>
                     3416881427
                 </a>
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.4!2d-60.6467155!3d-32.9367235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7ab3a4b053667%3A0xc48cb3e20c8188f!2sA%20Vapor%20Lavander%C3%ADas!5e0!3m2!1ses!2sar!4v1735000000000" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Ubicacion sucursal Jujuy 1684"></iframe>
+                </div>
             </div>
             <div class="location-card reveal">
                 <div class="location-pin">
@@ -1551,6 +1899,9 @@
                     </svg>
                     3416881427
                 </a>
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.5!2d-60.6443484!3d-32.9545119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7ab0fde364ca5%3A0xff14cdd6591918c!2sA%20Vapor%20Lavander%C3%ADas!5e0!3m2!1ses!2sar!4v1735000000001" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Ubicacion sucursal Mitre 1484"></iframe>
+                </div>
             </div>
             <div class="location-card reveal">
                 <div class="location-pin">
@@ -1568,7 +1919,71 @@
                     </svg>
                     3416881427
                 </a>
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.4!2d-60.6464477!3d-32.9492009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7ab9be46ed323%3A0x3e91787d114b6b11!2sA%20Vapor%20Lavander%C3%ADas!5e0!3m2!1ses!2sar!4v1735000000002" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Ubicacion sucursal San Juan 1446"></iframe>
+                </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- SUGGESTIONS FORM -->
+<section class="suggestions" id="sugerencias">
+    <div class="container">
+        <div class="suggestions-grid">
+            <div class="reveal">
+                <div class="section-eyebrow">¿Tenés algo para decirnos?</div>
+                <h2>Tu opinión <span class="accent">nos importa</span></h2>
+                <p style="font-size: 1.05rem; color: var(--ink-soft); line-height: 1.7; margin-top: 20px; max-width: 460px;">
+                    Sugerencias, reclamos, ideas para mejorar o simplemente saludarnos. Leemos cada mensaje que llega y te respondemos a la brevedad.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 30px;">
+                    <div style="display: flex; align-items: center; gap: 12px; font-size: 0.95rem; color: var(--ink-soft);">
+                        <div style="width: 36px; height: 36px; background: var(--cream); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        avaporlavanderias@gmail.com
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; font-size: 0.95rem; color: var(--ink-soft);">
+                        <div style="width: 36px; height: 36px; background: var(--cream); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--violet)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
+                        </div>
+                        WhatsApp: +54 9 341 688-1427
+                    </div>
+                </div>
+            </div>
+            <form class="suggestions-form reveal" id="suggestions-form" action="https://formspree.io/f/FORMSPREE_ID_PLACEHOLDER" method="POST">
+                <input type="hidden" name="_subject" value="Sugerencia desde la web de Avapor">
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                <div class="form-group">
+                    <label for="form-name">Tu nombre</label>
+                    <input type="text" id="form-name" name="nombre" required placeholder="Como te llamás">
+                </div>
+                <div class="form-group">
+                    <label for="form-email">Email de contacto</label>
+                    <input type="email" id="form-email" name="email" required placeholder="tucorreo@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="form-tipo">Tipo de mensaje</label>
+                    <select id="form-tipo" name="tipo" required>
+                        <option value="">Elegí una opción</option>
+                        <option value="Sugerencia">Sugerencia</option>
+                        <option value="Reclamo">Reclamo</option>
+                        <option value="Consulta">Consulta general</option>
+                        <option value="Felicitación">Felicitación</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="form-mensaje">Tu mensaje</label>
+                    <textarea id="form-mensaje" name="mensaje" required placeholder="Contanos qué necesitás..."></textarea>
+                </div>
+                <button type="submit" class="form-submit">
+                    Enviar mensaje
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+                <div class="form-status" id="form-status"></div>
+            </form>
         </div>
     </div>
 </section>
@@ -1762,6 +2177,46 @@
 
     // Trackear permanencia mayor a 30 segundos
     setTimeout(function() { track('engaged_30s'); }, 30000);
+
+    // === FORMULARIO DE SUGERENCIAS ===
+    var form = document.getElementById('suggestions-form');
+    var status = document.getElementById('form-status');
+    if (form && status) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var submitBtn = form.querySelector('.form-submit');
+            var originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Enviando...';
+            status.className = 'form-status';
+            status.textContent = '';
+
+            var data = new FormData(form);
+            fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(function(response) {
+                if (response.ok) {
+                    status.className = 'form-status success';
+                    status.textContent = '¡Mensaje enviado! Te respondemos a la brevedad.';
+                    form.reset();
+                    track('form_submitted');
+                } else {
+                    response.json().then(function(data) {
+                        status.className = 'form-status error';
+                        status.textContent = data.errors ? data.errors.map(function(e){return e.message;}).join(', ') : 'Hubo un problema. Probá de nuevo o escribinos por WhatsApp.';
+                    });
+                }
+            }).catch(function() {
+                status.className = 'form-status error';
+                status.textContent = 'Hubo un problema. Probá de nuevo o escribinos por WhatsApp.';
+            }).finally(function() {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            });
+        });
+    }
 })();
 </script>
 
