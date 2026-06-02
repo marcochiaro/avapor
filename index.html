@@ -2178,7 +2178,13 @@
     var loadtimeInput = document.getElementById('form-loadtime');
     var turnstileWidgetId = null;
     var pendingSubmit = false;
+    var pendingPayload = null;
     var pageLoadedAt = Date.now();
+
+    function setFormDisabled(disabled) {
+        var fields = form.querySelectorAll('input, select, textarea, button');
+        for (var i = 0; i < fields.length; i++) fields[i].disabled = disabled;
+    }
 
     if (loadtimeInput) {
         loadtimeInput.value = String(pageLoadedAt);
@@ -2195,17 +2201,23 @@
     }
 
     function submitWithToken(token) {
+        // Si por algun motivo no hay un submit pendiente (token fantasma), ignoramos.
+        if (!pendingSubmit || !pendingPayload) {
+            return;
+        }
         pendingSubmit = false;
+
         var submitBtn = form.querySelector('.form-submit');
         var originalText = submitBtn.dataset.originalText || submitBtn.innerHTML;
 
-        var data = new FormData(form);
-        data.set('cf-turnstile-response', token);
+        var payload = pendingPayload;
+        payload['cf-turnstile-response'] = token;
+        pendingPayload = null;
 
         fetch('/api/contact', {
             method: 'POST',
-            body: new URLSearchParams(data),
-            headers: { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' }
+            body: JSON.stringify(payload),
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
         }).then(function(response) {
             return response.json().then(function(json) { return { ok: response.ok, json: json }; });
         }).then(function(result) {
@@ -2220,6 +2232,7 @@
         }).catch(function() {
             setStatus('error', 'Hubo un problema. Proba de nuevo o escribinos por WhatsApp.');
         }).finally(function() {
+            setFormDisabled(false);
             restoreSubmitBtn(submitBtn, originalText);
             if (window.turnstile && turnstileWidgetId !== null) {
                 try { window.turnstile.reset(turnstileWidgetId); } catch (e) {}
@@ -2239,6 +2252,8 @@
                     // Solo mostrar error si el usuario realmente intento enviar el form.
                     if (!pendingSubmit) return;
                     pendingSubmit = false;
+                    pendingPayload = null;
+                    setFormDisabled(false);
                     setStatus('error', 'No se pudo validar la seguridad. Intenta de nuevo o escribinos por WhatsApp.');
                     var submitBtn = form.querySelector('.form-submit');
                     restoreSubmitBtn(submitBtn, submitBtn.dataset.originalText || submitBtn.innerHTML);
@@ -2256,17 +2271,45 @@
     };
 
     if (form && status) {
+        // Evitar que Enter en inputs single-line submitee accidentalmente.
+        // Solo permitimos submit al clickear el boton o presionar Enter sobre el boton.
+        form.addEventListener('keydown', function(e) {
+            if (e.key !== 'Enter') return;
+            var t = e.target;
+            if (t && t.tagName === 'TEXTAREA') return;
+            if (t && t.tagName === 'BUTTON' && t.type === 'submit') return;
+            e.preventDefault();
+        });
+
         form.addEventListener('submit', function(e) {
             e.preventDefault();
+
+            // Si ya hay un submit en curso, ignorar.
+            if (pendingSubmit) return;
+
+            // Validacion HTML5 nativa antes de gastar una verificacion de Turnstile.
+            if (typeof form.reportValidity === 'function' && !form.reportValidity()) {
+                return;
+            }
+
             var submitBtn = form.querySelector('.form-submit');
             if (!submitBtn.dataset.originalText) submitBtn.dataset.originalText = submitBtn.innerHTML;
-            submitBtn.disabled = true;
             submitBtn.innerHTML = 'Enviando...';
             setStatus('', '');
+
+            // Snapshot de los datos AHORA — asi si el usuario sigue tipeando
+            // mientras Turnstile valida, mandamos lo que tenia al apretar enviar.
+            pendingPayload = {};
+            new FormData(form).forEach(function(value, key) { pendingPayload[key] = value; });
             pendingSubmit = true;
+
+            // Bloquear todo el formulario mientras se valida y se envia.
+            setFormDisabled(true);
 
             if (!window.turnstile || turnstileWidgetId === null) {
                 pendingSubmit = false;
+                pendingPayload = null;
+                setFormDisabled(false);
                 setStatus('error', 'La verificacion de seguridad no se cargo. Recarga la pagina.');
                 restoreSubmitBtn(submitBtn, submitBtn.dataset.originalText);
                 return;
@@ -2275,6 +2318,8 @@
                 window.turnstile.execute(turnstileWidgetId);
             } catch (err) {
                 pendingSubmit = false;
+                pendingPayload = null;
+                setFormDisabled(false);
                 setStatus('error', 'No se pudo iniciar la verificacion. Intenta de nuevo.');
                 restoreSubmitBtn(submitBtn, submitBtn.dataset.originalText);
             }
