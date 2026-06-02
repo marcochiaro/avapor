@@ -19,7 +19,13 @@
     <meta property="og:image" content="https://lavanderiasavapor.com/favicon-384.png">
     <meta property="og:url" content="https://lavanderiasavapor.com">
     <meta property="og:type" content="website">
-    
+
+    <!-- Phosphor Icons (Duotone) -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+
+    <!-- Cloudflare Turnstile (captcha invisible) -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCb" async defer></script>
+
     <style>
         :root {
             --violet: #6B4D8C;
@@ -579,6 +585,13 @@
             height: 30px;
             stroke: var(--violet);
         }
+
+        .service-icon-wrap i {
+            font-size: 36px;
+            color: var(--violet);
+            line-height: 1;
+            --ph-duotone-color: var(--teal-deep);
+        }
         
         .service-icon-wrap .emoji-icon {
             font-size: 32px;
@@ -646,6 +659,13 @@
             width: 28px;
             height: 28px;
             stroke: var(--white);
+        }
+
+        .service-detail-icon i {
+            font-size: 30px;
+            color: var(--white);
+            line-height: 1;
+            --ph-duotone-color: var(--teal-light);
         }
         
         .service-detail-card h3 {
@@ -758,6 +778,13 @@
             width: 24px;
             height: 24px;
             stroke: var(--white);
+        }
+
+        .location-pin i {
+            font-size: 28px;
+            color: var(--white);
+            line-height: 1;
+            --ph-duotone-color: var(--teal-light);
         }
         
         .location-card h3 {
@@ -1275,6 +1302,25 @@
             flex-wrap: wrap;
             gap: 12px;
         }
+
+        .footer-credit {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.35);
+            letter-spacing: 0.03em;
+        }
+
+        .footer-credit a {
+            color: rgba(255, 255, 255, 0.55);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .footer-credit a:hover {
+            color: var(--teal-light);
+            border-color: var(--teal-light);
+        }
         
         /* === WHATSAPP FLOAT === */
         .whatsapp-float {
@@ -1484,7 +1530,7 @@
             </ul>
         </nav>
         <button class="menu-toggle" aria-label="Menú">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <i class="ph-duotone ph-list" style="font-size: 28px; color: var(--violet-deep);"></i>
         </button>
     </div>
 </header>
@@ -1572,88 +1618,56 @@
         <div class="services-icons-grid">
             <div class="service-icon-card reveal">
                 <div class="service-icon-wrap">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M2 17l2-4h6l2-2 4 2h6l-1 4z"/>
-                        <path d="M2 17v3h20v-3"/>
-                        <path d="M10 13l-2-3"/>
-                        <path d="M14 13l1-2"/>
-                    </svg>
+                    <i class="ph-duotone ph-sneaker"></i>
                 </div>
                 <h3>Zapatillas y Mochilas</h3>
                 <p>Lavado y secado artesanal</p>
             </div>
             <div class="service-icon-card reveal">
                 <div class="service-icon-wrap">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M2 17V7"/>
-                        <path d="M2 12h20v5"/>
-                        <path d="M2 17h20"/>
-                        <path d="M22 17v3"/>
-                        <path d="M2 17v3"/>
-                        <rect x="5" y="9" width="6" height="3" rx="1"/>
-                    </svg>
+                    <i class="ph-duotone ph-bed"></i>
                 </div>
                 <h3>Acolchados</h3>
                 <p>Limpieza profunda de acolchados, frazadas y plumones</p>
             </div>
             <div class="service-icon-card reveal">
                 <div class="service-icon-wrap">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 6a2 2 0 100-4 2 2 0 000 4z"/>
-                        <path d="M12 6v3"/>
-                        <path d="M12 9L3 17h18l-9-8z"/>
-                    </svg>
+                    <i class="ph-duotone ph-coat-hanger"></i>
                 </div>
                 <h3>Tintorería</h3>
                 <p>Limpieza en seco para prendas delicadas</p>
             </div>
             <div class="service-icon-card reveal">
                 <div class="service-icon-wrap">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M3 18h18l-2-7a3 3 0 00-3-2H8L3 18z"/>
-                        <path d="M16 9V7a3 3 0 00-3-3h-3"/>
-                        <path d="M7 14h3"/>
-                    </svg>
+                    <i class="ph-duotone ph-shirt-folded"></i>
                 </div>
                 <h3>Planchado</h3>
                 <p>Prendas en general</p>
             </div>
             <div class="service-icon-card reveal">
                 <div class="service-icon-wrap">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 3l4 2 2 4-3 2v10a1 1 0 01-1 1H6a1 1 0 01-1-1V11L2 9l2-4 4-2"/>
-                        <path d="M8 3a4 4 0 008 0"/>
-                    </svg>
+                    <i class="ph-duotone ph-t-shirt"></i>
                 </div>
                 <h3>Ropa</h3>
                 <p>Lavado de prendas de todo tipo</p>
             </div>
             <div class="service-icon-card reveal">
                 <div class="service-icon-wrap">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="6" width="20" height="12" rx="2"/>
-                        <path d="M2 10h20M6 14h2M11 14h2"/>
-                    </svg>
+                    <i class="ph-duotone ph-credit-card"></i>
                 </div>
                 <h3>Medios de pago</h3>
                 <p>Aceptamos diversos métodos de pago</p>
             </div>
             <div class="service-icon-card reveal">
                 <div class="service-icon-wrap">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="7" cy="17" r="3"/>
-                        <circle cx="17" cy="17" r="3"/>
-                        <path d="M10 17h4M14 17V7h4l3 3v7M3 7h7v10"/>
-                    </svg>
+                    <i class="ph-duotone ph-truck"></i>
                 </div>
                 <h3>Servicio a domicilio</h3>
                 <p>Puerta a puerta</p>
             </div>
             <div class="service-icon-card reveal">
                 <div class="service-icon-wrap">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 2l2 4 4 1-3 3 1 4-4-2-4 2 1-4-3-3 4-1z"/>
-                    </svg>
+                    <i class="ph-duotone ph-sparkle"></i>
                 </div>
                 <h3>Estilo en Lavanderías</h3>
                 <p>#estiloenlavanderias</p>
@@ -1672,63 +1686,42 @@
         <div class="services-detailed-grid">
             <div class="service-detail-card reveal">
                 <div class="service-detail-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M3 7h18M5 7v13a1 1 0 001 1h12a1 1 0 001-1V7M9 4h6v3H9z"/>
-                        <circle cx="12" cy="14" r="4"/>
-                    </svg>
+                    <i class="ph-duotone ph-washing-machine"></i>
                 </div>
                 <h3>Lavados</h3>
                 <p>Nuestro servicio de lavado incluye desmanchado de prendas, lavado, secado, perfumado, doblado y embolsado. Un lavado incluye entre 10 y 12 prendas estándar.</p>
             </div>
             <div class="service-detail-card reveal">
                 <div class="service-detail-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9 11V5a1.5 1.5 0 013 0v4"/>
-                        <path d="M12 9V4a1.5 1.5 0 013 0v6"/>
-                        <path d="M15 10V6a1.5 1.5 0 013 0v9c0 3-2 6-6 6s-5-2-7-5l-3-5a1.5 1.5 0 012-2l2 2V7a1.5 1.5 0 013 0v5"/>
-                    </svg>
+                    <i class="ph-duotone ph-hand-soap"></i>
                 </div>
                 <h3>Lavados artesanales</h3>
                 <p>Este tipo de lavados, es para zapatillas, mochilas, bolsos, o cualquier prenda que su etiqueta así lo indique. No se utilizan máquinas.</p>
             </div>
             <div class="service-detail-card reveal">
                 <div class="service-detail-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                    </svg>
+                    <i class="ph-duotone ph-bed"></i>
                 </div>
                 <h3>Lavados especiales</h3>
                 <p>Incluye lavados de acolchados, plumones, frazadas, pellettes, cubrecamas, edredones, almohadas, alfombras.</p>
             </div>
             <div class="service-detail-card reveal">
                 <div class="service-detail-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M3 18h18l-2-7a3 3 0 00-3-2H8L3 18z"/>
-                        <path d="M16 9V7a3 3 0 00-3-3h-3"/>
-                        <path d="M7 14h3"/>
-                    </svg>
+                    <i class="ph-duotone ph-shirt-folded"></i>
                 </div>
                 <h3>Planchado</h3>
                 <p>Planchamos todo tipo de prendas.</p>
             </div>
             <div class="service-detail-card reveal">
                 <div class="service-detail-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 6a2 2 0 100-4 2 2 0 000 4z"/>
-                        <path d="M12 6v3"/>
-                        <path d="M12 9L3 17h18l-9-8z"/>
-                    </svg>
+                    <i class="ph-duotone ph-coat-hanger"></i>
                 </div>
                 <h3>Tintorería</h3>
                 <p>Limpieza en seco para prendas delicadas.</p>
             </div>
             <div class="service-detail-card reveal">
                 <div class="service-detail-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="7" cy="17" r="3"/>
-                        <circle cx="17" cy="17" r="3"/>
-                        <path d="M10 17h4M14 17V7h4l3 3v7M3 7h7v10"/>
-                    </svg>
+                    <i class="ph-duotone ph-truck"></i>
                 </div>
                 <h3>Servicio a domicilio</h3>
                 <p>Puerta a puerta.</p>
@@ -1865,10 +1858,7 @@
         <div class="locations-grid">
             <div class="location-card reveal">
                 <div class="location-pin">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-                        <circle cx="12" cy="9" r="2.5"/>
-                    </svg>
+                    <i class="ph-duotone ph-map-pin"></i>
                 </div>
                 <h3>Jujuy 1684</h3>
                 <div class="location-area">Rosario</div>
@@ -1885,10 +1875,7 @@
             </div>
             <div class="location-card reveal">
                 <div class="location-pin">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-                        <circle cx="12" cy="9" r="2.5"/>
-                    </svg>
+                    <i class="ph-duotone ph-map-pin"></i>
                 </div>
                 <h3>Mitre 1484</h3>
                 <div class="location-area">Rosario</div>
@@ -1905,10 +1892,7 @@
             </div>
             <div class="location-card reveal">
                 <div class="location-pin">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-                        <circle cx="12" cy="9" r="2.5"/>
-                    </svg>
+                    <i class="ph-duotone ph-map-pin"></i>
                 </div>
                 <h3>San Juan 1446</h3>
                 <div class="location-area">Rosario</div>
@@ -1940,7 +1924,7 @@
                 <div style="display: flex; flex-direction: column; gap: 18px; margin-top: 38px;">
                     <div style="display: flex; align-items: center; gap: 16px; font-size: 1.08rem; color: var(--ink-soft);">
                         <div style="width: 48px; height: 48px; background: var(--cream); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <i class="ph-duotone ph-envelope" style="font-size: 26px; color: var(--violet); --ph-duotone-color: var(--teal-deep);"></i>
                         </div>
                         avaporlavanderias@gmail.com
                     </div>
@@ -1952,9 +1936,10 @@
                     </div>
                 </div>
             </div>
-            <form class="suggestions-form reveal" id="suggestions-form" action="https://formspree.io/f/xaqvkynp" method="POST">
+            <form class="suggestions-form reveal" id="suggestions-form" action="/api/contact" method="POST">
                 <input type="hidden" name="_subject" value="Sugerencia desde la web de Avapor">
                 <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                <input type="hidden" name="_t" id="form-loadtime">
                 <div class="form-group">
                     <label for="form-name">Tu nombre</label>
                     <input type="text" id="form-name" name="nombre" required placeholder="Como te llamás">
@@ -1978,9 +1963,10 @@
                     <label for="form-mensaje">Tu mensaje</label>
                     <textarea id="form-mensaje" name="mensaje" required placeholder="Contanos qué necesitás..."></textarea>
                 </div>
+                <div id="turnstile-container"></div>
                 <button type="submit" class="form-submit">
                     Enviar mensaje
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    <i class="ph-duotone ph-paper-plane-tilt" style="font-size: 20px;"></i>
                 </button>
                 <div class="form-status" id="form-status"></div>
             </form>
@@ -2050,6 +2036,7 @@
     <div class="footer-bottom">
         <span>Lavanderias Avapor © - Todos los derechos reservados</span>
         <span>#estiloenlavanderias · Rosario, Argentina</span>
+        <span class="footer-credit">Desarrollado por <a href="mailto:mchiaro79@gmail.com">Marco Chiaro</a></span>
     </div>
 </footer>
 
@@ -2178,43 +2165,119 @@
     // Trackear permanencia mayor a 30 segundos
     setTimeout(function() { track('engaged_30s'); }, 30000);
 
-    // === FORMULARIO DE SUGERENCIAS ===
+    // === FORMULARIO DE SUGERENCIAS (con Cloudflare Turnstile invisible) ===
+    // IMPORTANTE: reemplazar la site key dummy de testing por la real desde dash.cloudflare.com/turnstile.
+    // Dummy keys oficiales de Cloudflare (siempre pasan, solo para testing):
+    //   site key (publica)  : 1x00000000000000000000AA  -> siempre pasa
+    //   site key (publica)  : 2x00000000000000000000AB  -> siempre falla
+    //   secret key (privada): 1x0000000000000000000000000000000AA -> siempre pasa (va en .env.local)
+    var TURNSTILE_SITE_KEY = '0x4AAAAAADdvRCK1fUXsj6pZ';
+
     var form = document.getElementById('suggestions-form');
     var status = document.getElementById('form-status');
+    var loadtimeInput = document.getElementById('form-loadtime');
+    var turnstileWidgetId = null;
+    var pendingSubmit = false;
+    var pageLoadedAt = Date.now();
+
+    if (loadtimeInput) {
+        loadtimeInput.value = String(pageLoadedAt);
+    }
+
+    function setStatus(kind, msg) {
+        status.className = 'form-status' + (kind ? ' ' + kind : '');
+        status.textContent = msg || '';
+    }
+
+    function restoreSubmitBtn(submitBtn, originalText) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+    }
+
+    function submitWithToken(token) {
+        pendingSubmit = false;
+        var submitBtn = form.querySelector('.form-submit');
+        var originalText = submitBtn.dataset.originalText || submitBtn.innerHTML;
+
+        var data = new FormData(form);
+        data.set('cf-turnstile-response', token);
+
+        fetch('/api/contact', {
+            method: 'POST',
+            body: new URLSearchParams(data),
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' }
+        }).then(function(response) {
+            return response.json().then(function(json) { return { ok: response.ok, json: json }; });
+        }).then(function(result) {
+            if (result.ok) {
+                setStatus('success', '¡Mensaje enviado! Te respondemos a la brevedad.');
+                form.reset();
+                if (loadtimeInput) loadtimeInput.value = String(Date.now());
+                track('form_submitted');
+            } else {
+                setStatus('error', (result.json && result.json.error) ? result.json.error : 'Hubo un problema. Proba de nuevo o escribinos por WhatsApp.');
+            }
+        }).catch(function() {
+            setStatus('error', 'Hubo un problema. Proba de nuevo o escribinos por WhatsApp.');
+        }).finally(function() {
+            restoreSubmitBtn(submitBtn, originalText);
+            if (window.turnstile && turnstileWidgetId !== null) {
+                try { window.turnstile.reset(turnstileWidgetId); } catch (e) {}
+            }
+        });
+    }
+
+    // Callback global para cuando carga el script de Turnstile
+    window.onloadTurnstileCb = function() {
+        if (!window.turnstile || !document.getElementById('turnstile-container')) return;
+        try {
+            turnstileWidgetId = window.turnstile.render('#turnstile-container', {
+                sitekey: TURNSTILE_SITE_KEY,
+                size: 'invisible',
+                callback: function(token) { submitWithToken(token); },
+                'error-callback': function() {
+                    // Solo mostrar error si el usuario realmente intento enviar el form.
+                    if (!pendingSubmit) return;
+                    pendingSubmit = false;
+                    setStatus('error', 'No se pudo validar la seguridad. Intenta de nuevo o escribinos por WhatsApp.');
+                    var submitBtn = form.querySelector('.form-submit');
+                    restoreSubmitBtn(submitBtn, submitBtn.dataset.originalText || submitBtn.innerHTML);
+                },
+                'expired-callback': function() {
+                    if (window.turnstile && turnstileWidgetId !== null) {
+                        try { window.turnstile.reset(turnstileWidgetId); } catch (e) {}
+                    }
+                }
+            });
+        } catch (err) {
+            // Sitekey invalida u otro problema de configuracion — no mostrar al usuario aun.
+            console.warn('Turnstile no se pudo inicializar:', err);
+        }
+    };
+
     if (form && status) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             var submitBtn = form.querySelector('.form-submit');
-            var originalText = submitBtn.innerHTML;
+            if (!submitBtn.dataset.originalText) submitBtn.dataset.originalText = submitBtn.innerHTML;
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Enviando...';
-            status.className = 'form-status';
-            status.textContent = '';
+            setStatus('', '');
+            pendingSubmit = true;
 
-            var data = new FormData(form);
-            fetch(form.action, {
-                method: 'POST',
-                body: data,
-                headers: { 'Accept': 'application/json' }
-            }).then(function(response) {
-                if (response.ok) {
-                    status.className = 'form-status success';
-                    status.textContent = '¡Mensaje enviado! Te respondemos a la brevedad.';
-                    form.reset();
-                    track('form_submitted');
-                } else {
-                    response.json().then(function(data) {
-                        status.className = 'form-status error';
-                        status.textContent = data.errors ? data.errors.map(function(e){return e.message;}).join(', ') : 'Hubo un problema. Probá de nuevo o escribinos por WhatsApp.';
-                    });
-                }
-            }).catch(function() {
-                status.className = 'form-status error';
-                status.textContent = 'Hubo un problema. Probá de nuevo o escribinos por WhatsApp.';
-            }).finally(function() {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalText;
-            });
+            if (!window.turnstile || turnstileWidgetId === null) {
+                pendingSubmit = false;
+                setStatus('error', 'La verificacion de seguridad no se cargo. Recarga la pagina.');
+                restoreSubmitBtn(submitBtn, submitBtn.dataset.originalText);
+                return;
+            }
+            try {
+                window.turnstile.execute(turnstileWidgetId);
+            } catch (err) {
+                pendingSubmit = false;
+                setStatus('error', 'No se pudo iniciar la verificacion. Intenta de nuevo.');
+                restoreSubmitBtn(submitBtn, submitBtn.dataset.originalText);
+            }
         });
     }
 })();
